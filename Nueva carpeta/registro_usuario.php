@@ -4,8 +4,10 @@
     $Contrasena= $_POST['Contrasena'];
     $ROL =$_POST['ROL'];
 
-    $query= "INSERT INTO usuarios ( Usuario, Contrasena, ROL) 
-        Values('$usuario','$Contrasena','$ROL')";
+    //Se utilizan los puntos para concatenar y no lo tome como si fuera un texto plano si no como una variable
+    $query = "INSERT INTO usuarios (Usuario, Contrasena, ROL) 
+          VALUES ('" . $usuario . "', '" . $Contrasena . "', '" . $ROL . "')";
+
     
     $ejecutar= mysqli_query($connec,$query);
 
