@@ -12,8 +12,13 @@
 </head>
 <body>
     <div class="container text-center ">
-        <div class="div bg-light ">
-            <header class><h1>Sistema de Administracion de Tareas JASA</h1></header>
+      
+         <h1>Sistema de Administracion de Tareas JASA</h1>
+        
+        <br>
+        <br>
+        <br>
+          <div class="div bg-light ">
             <form  action="registro_usuario.php"  method="POST">
             
             <h2>Registrar usuario</h2>
