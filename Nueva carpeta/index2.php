@@ -13,12 +13,13 @@
 <body>
     <div class="container text-center ">
       
-         <h1>Sistema de Administracion de Tareas JASA</h1>
+         <h1  class="text-warning" >Sistema de Administracion de Tareas JASA</h1>
         
         <br>
         <br>
         <br>
-          <div class="div bg-light ">
+        <div class= "d-flex justify-content-center">
+          <div class="p-3 mb-2 bg-warning text-dark  ">
             <form  action="registro_usuario.php"  method="POST">
             
             <h2>Registrar usuario</h2>
@@ -49,6 +50,7 @@
             
             </form>
             <p>ya tienes una cuenta? Inicia sesion <a href="http://localhost/mi_proyecto/nueva%20carpeta/index3.php?username=&a=sfsfsadfs#ola">aqui</a> </p>
+        </div>
         </div>
         
     </div>
