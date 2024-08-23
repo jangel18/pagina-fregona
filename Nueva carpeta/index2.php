@@ -16,7 +16,7 @@
          <h1  class="text-warning" >Sistema de Administracion de Tareas JASA</h1>
         
         <br>
-        <br>
+        <br> 
         <br>
         <div class= "d-flex justify-content-center">
           <div class="p-3 mb-2 bg-warning text-dark  ">

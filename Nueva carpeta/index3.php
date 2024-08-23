@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
 ">
     <style></style>
-</head>
+</head> 
 <body>
     <div class="container text-center ">
         <div class="div bg-light ">
