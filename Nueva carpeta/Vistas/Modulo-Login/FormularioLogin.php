@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesion</title>
-    <link rel="stylesheet" href= "css/style.css"> 
+    <link rel="stylesheet" href= "../css/style.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
 ">
     <style></style>
@@ -29,10 +29,12 @@
             </div>
             <br>
 
-            <input type="submit" value ="Iniciar Sesion"    >
+            <input type="submit" value ="Iniciar Sesion" >
             
             </form>
-            
+            <!-- En lugar de ocupar la ruta  http://localhost/mi_proyecto/nueva%20carpeta/index3.php?username=&a=sfsfsadfs#ola es mejor ocupar el archivo o la ruta del archivo-->
+
+            <p>Aun no tienes cuenta? Registrate <a href="../Modulo-Registro/FormularioRegistro.php">aqui</a> </p> 
 
 
         </div>
