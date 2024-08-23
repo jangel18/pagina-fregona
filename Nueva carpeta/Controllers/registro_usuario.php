@@ -1,5 +1,5 @@
 <?php 
-    include 'connection.php';
+    include '../Config/connection.php';
     $usuario= $_POST['Usuario'];
     $Contrasena= $_POST['Contrasena'];
     $ROL =$_POST['ROL'];
@@ -16,7 +16,7 @@
 
     if ($ejecutar) {
         // Redirigir a una página de éxito SistemaAdministradorTareas
-        header("Location: SistemaAdmnistradorTareas.php");
+        header("Location: ../Vistas/Modulo-Login/FormularioLogin.php");
         exit();
     } else {    
 

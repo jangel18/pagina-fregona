@@ -23,7 +23,7 @@
 
               <!-- Se pone ../../ ya que esta 2 carpetas antes esa cosa -->
 
-            <form  action="../../Controllers/registro_usuario.php  method="POST">
+            <form  action="../../Controllers/registro_usuario.php" method="POST">
             
             <h2>Registrar usuario</h2>
             <div>
