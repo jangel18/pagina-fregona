@@ -4,7 +4,7 @@
     $usuario= $_POST['Usuario'];
     $Contrasena= $_POST['Contrasena'];
     $Validacion  =  "SELECT FROM usuarios WHERE Usuario ='$usuario' and Contrasena ='$Contrasena'";
-    $Respuesta = $connec->query($Validacion);
+    $Respuesta = mysqli_query($connec,$Validacion);
 
     if(!empty($Respuesta)){
         echo" Error";

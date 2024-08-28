@@ -25,7 +25,7 @@
             <div class="">
                 <label for="password">Ingrese su contraseña</label>
                 <br>
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="Contrasena" placeholder="Password">
             </div>
             <br>
 
