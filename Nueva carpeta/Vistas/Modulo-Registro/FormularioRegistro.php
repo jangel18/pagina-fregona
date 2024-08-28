@@ -55,7 +55,7 @@
            
             <!-- En lugar de ocupar la ruta http://localhost/mi_proyecto/nueva%20carpeta/index3.php?username=&a=sfsfsadfs#ola es mejor ocupar el archivo o la ruta del archivo-->
 
-            <p>ya tienes una cuenta? Inicia sesion <a href="../Modulo-Registro/FormularioLogin.php">aqui</a> </p>
+            <p>ya tienes una cuenta? Inicia sesion <a href="../Modulo-Login/FormularioLogin.php">aqui</a> </p>
         </div>
         </div>
         

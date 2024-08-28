@@ -13,7 +13,7 @@
     <div class="container text-center ">
         <div class="div bg-light ">
             <header class><h1>Sistema de Administracion de Tareas JASA</h1></header>
-            <form id="ola" action="">
+            <form id="ola" action="../../Controllers/InicioDeSesion/Login_usuario.php" method="POST">
             
             <h2>Inicio de sesion</h2>
             <div>
