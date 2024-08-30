@@ -1,7 +1,7 @@
 html {
 
 }
-body{
+body{ /* fondo de pantalla */
 background-image:url(../img/espacio.jpg);
 background-size: cover;
     background-repeat: no-repeat;

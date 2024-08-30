@@ -24,7 +24,7 @@
               <!-- Se pone ../../ ya que esta 2 carpetas antes esa cosa -->
 
             <form  action="../../Controllers/Registro/registro_usuario.php" method="POST">
-            
+                <!-- Form de inicio de sesion  -->
             <h2>Registrar usuario</h2>
             <div>
                 <label for="usuario">Ingrese su usuario</label>
