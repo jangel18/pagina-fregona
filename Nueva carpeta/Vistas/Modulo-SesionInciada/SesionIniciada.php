@@ -3,10 +3,9 @@
     // Inicio de sesion personalizado
     session_start();
    //Mantiene la sesion iniciada
-    echo "Hola" . $_SESSION["Nombre"];
+    echo "Hola " . $_SESSION["Nombre"];
     $RolUsua = $_SESSION["Nombre"];
-    echo "$RolUsua";
-    
+   
     
 
 ?>
