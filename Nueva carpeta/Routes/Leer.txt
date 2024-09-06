@@ -86,7 +86,7 @@ class Router {
 }
 ```
 
-#### 3. `Vistas/perfil.php`
+#### 3. `Vistas/perfil.php` ESTO SOLO ES UN EJEMPLO DE LO QUE SE PODRIA HACER EN CASO DE MANEJAR PERFILES ETC
 Aquí recibirás el ID del usuario desde la ruta y podrás usarlo en la vista.
 
 ```php
