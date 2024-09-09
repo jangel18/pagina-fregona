@@ -1,0 +1,119 @@
+Este es uno de los pasos que se puede seguir para crear rutas 
+
+para solo poner por ejemplo www.localhost/usuario y que me despliegue el usuario o el modulo de usuario 
+
+### Paso 1: Definir Rutas con Parámetros
+
+Crea una clase `Router` para manejar las rutas. Aquí puedes definir rutas simples y rutas con parámetros, como `/perfil/{id}`.
+
+### Ejemplo de Código:
+
+#### 1. `index.php`
+Este es el punto de entrada donde capturas la URL y envías la solicitud al enrutador.
+
+```php
+<?php
+
+// Incluye el enrutador
+include 'Router.php';
+
+// Instanciar el Router
+$router = new Router();
+
+// Definir las rutas
+$router->add('GET', '/', function() {
+    include 'Vistas/home.php';
+});
+
+$router->add('GET', '/perfil/{id}', function($params) {
+    $userId = $params['id'];
+    include 'Vistas/perfil.php';
+});
+
+$router->add('GET', '/404', function() {
+    include 'Vistas/404.php';
+});
+
+// Procesar la solicitud
+$router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+```
+
+#### 2. `Router.php`
+Esta clase se encarga de manejar las rutas y procesar los parámetros. Aquí definimos las rutas y las asociamos a callbacks o archivos PHP.
+
+```php
+<?php
+
+class Router {
+    private $routes = [];
+
+    // Agregar ruta
+    public function add($method, $route, $callback) {
+        $this->routes[] = [
+            'method' => $method,
+            'route' => $this->formatRoute($route),
+            'callback' => $callback
+        ];
+    }
+
+    // Despachar la URL
+    public function dispatch($url, $method) {
+        foreach ($this->routes as $route) {
+            // Verificar método (GET, POST)
+            if ($method == $route['method']) {
+                // Comprobar si la URL coincide con la ruta definida
+                $pattern = '@^' . preg_replace('/\{([a-z]+)\}/', '([a-zA-Z0-9_\-]+)', $route['route']) . '$@';
+                if (preg_match($pattern, $this->formatRoute($url), $matches)) {
+                    array_shift($matches);
+                    // Obtener parámetros
+                    preg_match_all('/\{([a-z]+)\}/', $route['route'], $paramKeys);
+                    $params = array_combine($paramKeys[1], $matches);
+                    // Llamar al callback o incluir archivo
+                    call_user_func($route['callback'], $params);
+                    return;
+                }
+            }
+        }
+        // Si no encuentra la ruta, redirigir a 404
+        header("Location: /404");
+        exit();
+    }
+
+    // Formatear la ruta para quitar el slash final si existe
+    private function formatRoute($route) {
+        return rtrim($route, '/');
+    }
+}
+```
+
+#### 3. `Vistas/perfil.php` ESTO SOLO ES UN EJEMPLO DE LO QUE SE PODRIA HACER EN CASO DE MANEJAR PERFILES ETC
+Aquí recibirás el ID del usuario desde la ruta y podrás usarlo en la vista.
+
+```php
+<?php
+// $userId fue pasado desde el enrutador
+echo "Perfil del usuario con ID: " . htmlspecialchars($userId);
+
+// Aquí puedes hacer una consulta a la base de datos usando $userId
+?>
+```
+
+### Paso 2: Crear un archivo `.htaccess`
+Si estás usando Apache, debes redirigir todas las solicitudes a `index.php` para que el enrutador pueda manejarlas.
+
+```apache
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+```
+
+### Explicación:
+- **`Router.php`**: La clase `Router` define las rutas y las compara con la URL solicitada. Si una URL coincide, se ejecuta la acción correspondiente. Los parámetros dentro de las rutas se manejan con `{param}` y se pasan como array a la vista o callback.
+  
+- **Rutas con Parámetros**: La ruta `/perfil/{id}` captura cualquier número o texto que se coloque en lugar de `{id}` y lo pasa a la vista como `$params['id']`.
+
+- **Callback o Vista**: Las rutas pueden ejecutar una función anónima o incluir archivos PHP que actuarán como controladores.
+
+### Conclusión:
+Este código te permite crear un enrutador básico similar a Laravel en PHP nativo. Puedes definir rutas con parámetros y manejarlas de forma ordenada y limpia.
