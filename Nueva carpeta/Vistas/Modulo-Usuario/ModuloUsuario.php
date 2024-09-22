@@ -17,5 +17,14 @@
     <h3>Bienvenido Usuario <?php echo $_SESSION["Nombre"];?> </h3>
   </div>
 </nav> 
+
+<table>
+  <th>Nro. de tarea</th>
+  <th>Fecha de creacion o actualizacion</th>
+  <th>Tarea</th>
+  <th>Comentarios</th>
+
+  
+</table>
 </body>
 </html>
