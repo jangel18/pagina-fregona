@@ -1,5 +1,5 @@
 <?php
-
+  include '../../Config/connection.php';
     session_start();
     ?>
 
@@ -19,11 +19,12 @@
 </nav> 
 
 <table>
-  <th>Nro. de tarea</th>
-  <th>Fecha de creacion o actualizacion</th>
-  <th>Tarea</th>
-  <th>Comentarios</th>
-
+  <tr>
+      <th>Nro. de tarea</th>
+      <th>Fecha de creacion o actualizacion</th>
+      <th>Tarea</th>
+      <th>Comentarios</th>
+  </tr>
   
 </table>
 </body>
